@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-01-25T21:16:34.527737700Z</date>
+  <millis>1643145394527</millis>
+  <nanos>737700</nanos>
+  <sequence>0</sequence>
+  <logger>com.paperlessdesktop.gui.App</logger>
+  <level>INFO</level>
+  <class>com.paperlessdesktop.gui.App</class>
+  <method>start</method>
+  <thread>21</thread>
+  <message>Starting application</message>
+</record>
+<record>
+  <date>2022-01-25T21:16:36.848319800Z</date>
+  <millis>1643145396848</millis>
+  <nanos>319800</nanos>
+  <sequence>1</sequence>
+  <logger>com.paperlessdesktop.gui.App</logger>
+  <level>INFO</level>
+  <class>com.paperlessdesktop.gui.App</class>
+  <method>closeApp</method>
+  <thread>21</thread>
+  <message>Closing application</message>
+</record>
+</log>

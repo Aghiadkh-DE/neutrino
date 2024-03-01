@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="-2.0" layoutY="-1.0" prefHeight="551.0" prefWidth="928.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="General">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="899.0">
+                     <children>
+                        <Hyperlink fx:id="hyperlink" layoutX="38.0" layoutY="372.0" onAction="#configFileAction" prefHeight="23.0" prefWidth="218.0" text="Config File Directory" />
+                        <ScrollPane layoutX="424.0" layoutY="40.0" prefHeight="201.0" prefWidth="479.0">
+                           <content>
+                              <ListView fx:id="automationListView" onMouseClicked="#automationListMouseClickedAction" prefHeight="199.0" prefWidth="476.0" />
+                           </content>
+                        </ScrollPane>
+                        <Separator layoutX="397.0" orientation="VERTICAL" prefHeight="527.0" prefWidth="13.0" />
+                        <Separator layoutX="417.0" layoutY="294.0" prefHeight="6.0" prefWidth="494.0" />
+                        <Label alignment="CENTER" layoutX="436.0" layoutY="8.0" prefHeight="17.0" prefWidth="455.0" text="Automations list: Title, pattern, folder">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="552.0" layoutY="310.0" prefHeight="17.0" prefWidth="238.0" text="Add Automation Rule">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ruleTitleTextField" layoutX="436.0" layoutY="358.0" prefHeight="25.0" prefWidth="267.0" promptText="Rule's Title" />
+                        <Button fx:id="removeAutomationBtn" layoutX="777.0" layoutY="249.0" mnemonicParsing="false" onAction="#removeAutomationAction" prefHeight="30.0" prefWidth="126.0" text="Remove" AnchorPane.rightAnchor="19.0" />
+                        <Label layoutX="428.0" layoutY="253.0" prefHeight="25.0" prefWidth="342.0" text="Select an automation from the list and click Remove to delete" />
+                        <TextField fx:id="rulePatternTextField" layoutX="436.0" layoutY="399.0" prefHeight="25.0" prefWidth="266.0" promptText="Rule's Pattern. e.g.: bank,max musterman" />
+                        <TextField fx:id="ruleFolderNameTextField" layoutX="436.0" layoutY="442.0" prefHeight="25.0" prefWidth="266.0" promptText="Rule's folder name" />
+                        <Button fx:id="addButton" layoutX="771.0" layoutY="440.0" mnemonicParsing="false" onAction="#addAutomationAction" prefHeight="30.0" prefWidth="126.0" text="Add" />
+                        <Label layoutX="419.0" layoutY="482.0" prefHeight="17.0" prefWidth="487.0" text="Note that if you add an automation without a folder name then the folder name will follow" textFill="#a49b9b" />
+                        <Label layoutX="419.0" layoutY="500.0" prefHeight="17.0" prefWidth="47.0" text="Pattern." textFill="#a49b9b" />
+                        <Button fx:id="resetApplicationButton" layoutX="132.0" layoutY="478.0" mnemonicParsing="false" onAction="#resetApplicationAction" prefHeight="25.0" prefWidth="136.0" text="Reset Application" />
+                        <Label layoutX="38.0" layoutY="432.0" prefHeight="17.0" prefWidth="321.0" text="Resetting the application will delete all the settings but will " />
+                        <Label layoutX="38.0" layoutY="447.0" prefHeight="17.0" prefWidth="313.0" text="not effect your uploaded or processed documents." />
+                        <Label fx:id="automationResultLabel" alignment="CENTER" layoutX="727.0" layoutY="383.0" prefHeight="17.0" prefWidth="183.0" />
+                        <TitledPane animated="false" layoutX="27.0" layoutY="147.0" prefHeight="163.0" prefWidth="355.0" text="Windows settings">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="114.0" prefWidth="333.0">
+                                 <children>
+                                    <CheckBox fx:id="openOnStartupCheckbox" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#openOnStartupAction" prefHeight="17.0" prefWidth="325.0" text="Open Neutrino on computer startup" />
+                                    <CheckBox fx:id="startMinimizedCheckbox" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#startMinimizedAction" prefHeight="17.0" prefWidth="326.0" text="Start Neutrino minimized" />
+                                    <CheckBox fx:id="shutdownCheckBox" layoutX="14.0" layoutY="76.0" mnemonicParsing="false" onAction="#shutdownAction" prefHeight="17.0" prefWidth="331.0" text="Shutdown computer after OCR task" />
+                                    <CheckBox fx:id="moveCheckBox" layoutX="14.0" layoutY="106.0" mnemonicParsing="false" onAction="#moveCheckBoxAction" prefHeight="17.0" prefWidth="331.0" text="Move hits from source folder instead of making a copy" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="25.0" layoutY="29.0" prefHeight="98.0" prefWidth="358.0" text="Start-Up">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="81.0" prefWidth="356.0">
+                                 <children>
+                                    <CheckBox fx:id="loadDstOnStartUpCheckBox" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadDestPathOnStartUpAction" prefHeight="17.0" prefWidth="278.0" text="Load last destination directory used on startup" />
+                                    <CheckBox fx:id="loadSourceOnStartUpCheckBox" layoutX="15.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadSourcePathOnStartUp" prefHeight="24.0" prefWidth="272.0" text="Load last source directory used on startup" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <Separator layoutX="18.0" layoutY="337.0" prefHeight="12.0" prefWidth="370.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Performance and Accuracy">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="420.0">
+                     <children>
+                        <TitledPane animated="false" layoutX="28.0" layoutY="22.0" prefHeight="319.0" prefWidth="441.0" text="CPU">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="445.0">
+                                 <children>
+                                    <RadioButton fx:id="cpuMaximumPerformanceRadioBox" layoutX="22.0" layoutY="202.0" mnemonicParsing="false" onAction="#cpuMaxPerformanceAction" prefHeight="17.0" prefWidth="240.0" text="Maximum Performance" />
+                                    <RadioButton fx:id="cpuBalancedRadioBox" layoutX="22.0" layoutY="234.0" mnemonicParsing="false" onAction="#cpuBalancedPerformanceAction" prefHeight="17.0" prefWidth="238.0" text="Balanced Performance (Recommended)" />
+                                    <RadioButton fx:id="cpuLowPerformanceRadioBox" layoutX="22.0" layoutY="268.0" mnemonicParsing="false" onAction="#cpuLowPerformanceAction" prefHeight="17.0" prefWidth="390.0" text="Low Performance" />
+                                    <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="423.0" text="- Max Performance has a high CPU usage which may cause computer to slow " />
+                                    <Label layoutX="30.0" layoutY="31.0" prefHeight="17.0" prefWidth="405.0" text="down and the CPU to heat up. Choose this option if you prioritize speed and " />
+                                    <Label layoutX="30.0" layoutY="48.0" prefHeight="17.0" prefWidth="405.0" text="and don't want to run another program in the background." />
+                                    <Label layoutX="23.0" layoutY="76.0" prefHeight="17.0" prefWidth="422.0" text="- Balance Performance balances between CPU usage and other activities on " />
+                                    <Label layoutX="30.0" layoutY="93.0" prefHeight="17.0" prefWidth="399.0" text="this computer. This option is good most of the situations." />
+                                    <Label layoutX="22.0" layoutY="122.0" prefHeight="17.0" prefWidth="416.0" text="- Low Performance has a very low CPU usage but it's also slow if you are trying" />
+                                    <Label layoutX="30.0" layoutY="139.0" prefHeight="17.0" prefWidth="408.0" text="to do many files at once. Choose this option if you want to run the program" />
+                                    <Label layoutX="30.0" layoutY="156.0" prefHeight="17.0" prefWidth="413.0" text="without any slow down on the system." />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="29.0" layoutY="365.0" prefHeight="143.0" prefWidth="446.0" text="Image Enhancer">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <CheckBox fx:id="imageEnhancingCheckBox" layoutX="22.0" layoutY="80.0" mnemonicParsing="false" onAction="#activateImageEnhancingAction" prefHeight="17.0" prefWidth="386.0" text="Activate Image-Enhancing (Doesn't work with PDFs)" />
+                                    <Label layoutX="22.0" layoutY="6.0" prefHeight="17.0" prefWidth="417.0" text="Image Enhancer is an engine that serves as an extra layer of image refinement." />
+                                    <Label layoutX="24.0" layoutY="23.0" prefHeight="17.0" prefWidth="413.0" text="Applying the enhancer increases the OCR accuracy but requires more CPU" />
+                                    <Label layoutX="22.0" layoutY="39.0" prefHeight="17.0" prefWidth="409.0" text="usage. Activate it when images have bad fore- and background separation." />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="489.0" layoutY="22.0" prefHeight="485.0" prefWidth="414.0" text="OCR Engine">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="defaultRadioBox" layoutX="22.0" layoutY="302.0" mnemonicParsing="false" onAction="#defaultOEMAction" prefHeight="17.0" prefWidth="335.0" text="Default" />
+                                    <RadioButton fx:id="lstmOnlyRadioBox" layoutX="22.0" layoutY="213.0" mnemonicParsing="false" onAction="#lstmOnlyAction" prefHeight="17.0" prefWidth="327.0" text="Neural networks LSTM only" />
+                                    <RadioButton fx:id="lstm_legacy_RadioBox" layoutX="22.0" layoutY="273.0" mnemonicParsing="false" onAction="#lstm_LegacyAction" prefHeight="17.0" prefWidth="330.0" text="LSTM and Legacy" />
+                                    <RadioButton fx:id="legacyOnlyRadioBox" layoutX="22.0" layoutY="241.0" mnemonicParsing="false" onAction="#legacyOnlyAction" prefHeight="17.0" prefWidth="337.0" text="Legacy engine only" />
+                                    <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="378.0" text="- LSTM (Long short-term memory) only: " />
+                                    <Label layoutX="18.0" layoutY="58.0" prefHeight="17.0" prefWidth="377.0" text="- Legacy only: " />
+                                    <Label layoutX="83.0" layoutY="31.0" prefHeight="17.0" prefWidth="311.0" text="-&gt; better accuracy, but slower" />
+                                    <Label layoutX="83.0" layoutY="75.0" prefHeight="17.0" prefWidth="309.0" text="-&gt; fastest processing, but lower accuracy" />
+                                    <Label layoutX="18.0" layoutY="108.0" prefHeight="17.0" prefWidth="377.0" text="- LSTM + Legacy: uses both engines for the best accuracy" />
+                                    <Label layoutX="83.0" layoutY="125.0" prefHeight="17.0" prefWidth="311.0" text="-&gt; best accuracy, but slowest" />
+                                    <Label layoutX="18.0" layoutY="160.0" prefHeight="17.0" prefWidth="371.0" text="- Default: uses whatever available for a specific language from " />
+                                    <Label layoutX="29.0" layoutY="177.0" prefHeight="17.0" prefWidth="359.0" text="the above mode." />
+                                    <Separator layoutY="332.0" prefHeight="0.0" prefWidth="412.0" />
+                                    <RadioButton fx:id="balancedTrainedData" layoutX="22.0" layoutY="397.0" mnemonicParsing="false" onAction="#balancedTrainedDataAction" prefHeight="17.0" prefWidth="369.0" text="Balanced between accuracy and performance" />
+                                    <RadioButton fx:id="slowestTrainedData" layoutX="22.0" layoutY="422.0" mnemonicParsing="false" onAction="#slowestTrainedDataAction" prefHeight="17.0" prefWidth="364.0" text="Slowest, most accurate (LSTM, Default only)" />
+                                    <RadioButton fx:id="fastestTrainedData" layoutX="22.0" layoutY="370.0" mnemonicParsing="false" onAction="#fastestTrainedDataAction" prefHeight="17.0" prefWidth="370.0" text="Fastest, least accurate (LSTM, Default only)" />
+                                    <Label alignment="CENTER" layoutX="29.0" layoutY="342.0" prefHeight="17.0" prefWidth="333.0" text="Trained neural network" />
+                                    <VBox layoutX="214.0" layoutY="196.0" prefHeight="134.0" prefWidth="175.0" />
+                                 </children></AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Language">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="availableLanguagesListView" layoutX="21.0" layoutY="37.0" prefHeight="448.0" prefWidth="262.0" />
+                        <ListView fx:id="quickLanguagesListView" layoutX="643.0" layoutY="36.0" prefHeight="451.0" prefWidth="263.0" />
+                        <Button fx:id="from_Avail_To_quickMenu_Btn" alignment="CENTER" layoutX="402.0" layoutY="195.0" mnemonicParsing="false" onAction="#fromAvailableToQuickAction" prefHeight="36.0" prefWidth="117.0" text="-&gt;">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="from_quickMenu_To_availBtn" alignment="CENTER" layoutX="401.0" layoutY="281.0" mnemonicParsing="false" onAction="#fromQuickToAvailableAction" prefHeight="34.0" prefWidth="118.0" text="&lt;-">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="33.0" layoutY="14.0" prefHeight="17.0" prefWidth="239.0" text="Available Languages">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="643.0" layoutY="14.0" prefHeight="17.0" prefWidth="262.0" text="Languages in the quick menu">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="316.0" layoutY="110.0" prefHeight="23.0" prefWidth="298.0" text="Select a from any list and use the arrows ">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="319.0" layoutY="135.0" prefHeight="17.0" prefWidth="291.0" text="to drag it to the other menu.">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

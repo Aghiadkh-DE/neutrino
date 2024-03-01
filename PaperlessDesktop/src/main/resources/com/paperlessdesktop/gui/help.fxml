@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="581.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane layoutX="23.0" layoutY="19.0" prefHeight="377.0" prefWidth="382.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="19.0">
+         <content>
+            <TextFlow prefHeight="373.0" prefWidth="380.0">
+               <children>
+                  <VBox prefHeight="660.0" prefWidth="523.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="522.0" text="Neutrino v1.0.0 Release">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="72.0" prefWidth="384.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="521.0" text="   OCR or optical character recognition is an A.I. technology that reads and recognise a text from" />
+                              <Label prefHeight="17.0" prefWidth="511.0" text="   documents or any type of picture files. Neutrino allows you to easily utilize this technology " />
+                              <Label prefHeight="17.0" prefWidth="514.0" text="   to reorganize  your files and pictures on the computer while also being reliable and fast at the" />
+                              <Label prefHeight="17.0" prefWidth="369.0" text="   same time. " />
+                           </children>
+                        </VBox>
+                        <Label prefHeight="17.0" prefWidth="371.0" text="     How It Works?">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="520.0" text="  Load a folder or a directory from your computer and and add Automation rules chosen by " />
+                              <Label prefHeight="17.0" prefWidth="371.0" text="  you so that you can know which files should be sorted where." />
+                              <Label prefHeight="17.0" prefWidth="376.0" text="  An automation token consists of three part:" />
+                              <Label prefHeight="17.0" prefWidth="373.0" text="        - Title: Title is just a name of the token for you to remember" />
+                              <Label prefHeight="17.0" prefWidth="517.0" text="        - Pattern (sentence1, word2, ...): Those are the rules that should  should be satisfied for a file" />
+                              <Label prefHeight="17.0" prefWidth="382.0" text="           to be marked as &quot;found&quot;." />
+                              <Label prefHeight="17.0" prefWidth="514.0" text="        - Folder name: The name of folder, under which your files, that are found, are to be copied " />
+                              <Label prefHeight="17.0" prefWidth="375.0" text="          or moved, depending on how you set them in the settings." />
+                           </children>
+                        </VBox>
+                        <Label prefHeight="24.0" prefWidth="378.0" text="      Features:">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="161.0" prefWidth="384.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="372.0" text="- Set the performance of the CPU Utilization" />
+                              <Label text="- The ability to change the performance and quality of the engine" />
+                              <Label text="- The ability to shutdown the PC after OCR task" />
+                              <Label text="- Opening files by double clicking them with left mouse button from the list" />
+                              <Label text="- Selecting files by double clicking them with right mouse button from the list" />
+                              <Label text="- Dedicated Image-Enhancing engine to improve accuracy for picture with bad fore-  " />
+                              <Label text="   and background separation" />
+                              <Label text="- Support for over 30 Languages" />
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER" prefHeight="34.0" prefWidth="524.0" text="Patch 1.1.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="24.0" prefWidth="378.0" text="      What's New?">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="- Fixed a bug when files with extension of capital letters were not recognized" />
+                              <Label text="- Now Automation tokens can be edited by just double clicking them" />
+                              <Label text="- Confirmation dialog has been added to avoid accidental app resets" />
+                              <Label text="- The app now restarts automatically after resetting" />
+                              <Label text="- General algorithm and stability improvements" />
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" layoutX="324.0" layoutY="5.0" prefHeight="17.0" prefWidth="193.0" text="Neutrino powered by Tesseract">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </TextFlow>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
