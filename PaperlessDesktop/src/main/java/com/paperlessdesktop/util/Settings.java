@@ -22,7 +22,7 @@ public final class Settings implements Serializable{
     public int ocrEngineMode = TessOcrEngineMode.OEM_DEFAULT;
 
     public String sourceDir = null;
-    public String destDir = null;
+    public String destinationDir = null;
 
     public int tokensCount = 0;
 
@@ -36,8 +36,8 @@ public final class Settings implements Serializable{
         OCRTask.getInstance().setSourcePath(str);
     }
 
-    public void setDestDir(String str){
-        destDir = str;
+    public void setDestinationDir(String str){
+        destinationDir = str;
         OCRTask.getInstance().setDstPath(str);
     }
 
@@ -65,7 +65,7 @@ public final class Settings implements Serializable{
     public boolean cut_paste = false;
 
     public boolean loadSourcePathOnStartUp = false;
-    public boolean loadDestPathOnStartUp = false;
+    public boolean loadDestinationPathOnStartUp = false;
 
     public volatile AtomicBoolean shutdownAfterOCR = new AtomicBoolean(false);
 
