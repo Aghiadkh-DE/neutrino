@@ -13,4 +13,6 @@ public final class Parameter {
     private static final String USER_DIRECTORY = System.getProperty("user.home") + File.separator;
     public static final String NEUTRINO_DATA_PATH = USER_DIRECTORY + ".neutrino" + File.separator;
     public static final String LOG_DATA_PATH = USER_DIRECTORY + "neutrino_logs" + File.separator;
+
+    public static final int AVAILABLE_CORES = Runtime.getRuntime().availableProcessors();
 }

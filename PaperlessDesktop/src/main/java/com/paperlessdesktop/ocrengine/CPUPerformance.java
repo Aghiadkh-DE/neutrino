@@ -1,12 +1,16 @@
 package com.paperlessdesktop.ocrengine;
 
+import com.paperlessdesktop.util.Parameter;
+
 /**
  * Has 3 values and based on the number of cores
  * a CPU has.
  */
 public enum CPUPerformance {
-    MAX(Runtime.getRuntime().availableProcessors()), 
-    BALANCED(Runtime.getRuntime().availableProcessors() / 2),
+
+
+    MAX(Parameter.AVAILABLE_CORES / 2),
+    BALANCED((Parameter.AVAILABLE_CORES / 4) == 1 ? 2 : Parameter.AVAILABLE_CORES),
     LOW(1);
 
     private final int cores;
@@ -18,4 +22,5 @@ public enum CPUPerformance {
     public int getCores() {
         return cores;
     }
+
 }
