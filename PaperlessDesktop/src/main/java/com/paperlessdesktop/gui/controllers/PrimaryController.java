@@ -242,7 +242,7 @@ public class PrimaryController implements Initializable {
                     //if path was valid, then save it to settings
                     if(Utility.pathAllowed(dir.getPath())){
                         destListView.getItems().clear();
-                        settings.setDestDir(destPathTextField.getText().trim());
+                        settings.setDestinationDir(destPathTextField.getText().trim());
                     }   
                 }
             }
@@ -515,10 +515,10 @@ public class PrimaryController implements Initializable {
         statusLabel.setText("");
 
         //load on startup
-        if(settings.destDir != null && settings.loadDestPathOnStartUp){
-            destPathTextField.setText(settings.destDir);
+        if(settings.destinationDir != null && settings.loadDestinationPathOnStartUp){
+            destPathTextField.setText(settings.destinationDir);
         }else{
-            settings.setDestDir(null);
+            settings.setDestinationDir(null);
         }       
         if(settings.sourceDir != null && settings.loadSourcePathOnStartUp){
             sourcePathTextField.setText(settings.sourceDir);
@@ -621,7 +621,7 @@ public class PrimaryController implements Initializable {
         destPathTextField.textProperty().addListener((observable, oldValue, newValue) -> {
             newValue = newValue.trim();
             if(destPathTextField.getText().isBlank()){
-                settings.setDestDir(null);
+                settings.setDestinationDir(null);
                 if(!sourceFormat.get()){
                     statusLabel.setText("Source directory's format is bad!");
                 }
@@ -636,7 +636,7 @@ public class PrimaryController implements Initializable {
                 dstValidity.set(true);
             }
             else if(!Utility.isValidPathFormat(newValue)){
-                settings.setDestDir(null);
+                settings.setDestinationDir(null);
                 statusLabel.setTextFill(Color.RED);
                 if(!sourceFormat.get()){
                     statusLabel.setText("Source\\Destination directory's format is bad!");
@@ -651,7 +651,7 @@ public class PrimaryController implements Initializable {
                 dstFormat.set(false);
             }
             else if(!Utility.isValidPath(newValue)){
-                settings.setDestDir(null);
+                settings.setDestinationDir(null);
                 statusLabel.setTextFill(Color.RED);
                 if(!sourceValidity.get()){
                     statusLabel.setText("Source\\Directory directory doesn't exist!");
@@ -665,7 +665,7 @@ public class PrimaryController implements Initializable {
                 }
                 dstValidity.set(false);
             }else{
-                settings.setDestDir(newValue);
+                settings.setDestinationDir(newValue);
                 ocrBtn.setDisable(false);
                 if(!sourceFormat.get()){
                     statusLabel.setText("Source directory's format is bad!");

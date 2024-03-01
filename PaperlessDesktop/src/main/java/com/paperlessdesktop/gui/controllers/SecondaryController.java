@@ -386,7 +386,7 @@ public class SecondaryController implements Initializable{
      */
     @FXML
     void loadDestPathOnStartUpAction(ActionEvent event) {
-        settings.loadDestPathOnStartUp = loadDstOnStartUpCheckBox.isSelected();
+        settings.loadDestinationPathOnStartUp = loadDstOnStartUpCheckBox.isSelected();
     }
 
     /**
@@ -551,7 +551,7 @@ public class SecondaryController implements Initializable{
         Settings.getInstance().quickmenuLanguagesList.forEach(e -> quickLanguagesListView.getItems().add(e));
 
         //load startup option
-        loadDstOnStartUpCheckBox.setSelected(settings.loadDestPathOnStartUp);
+        loadDstOnStartUpCheckBox.setSelected(settings.loadDestinationPathOnStartUp);
         loadSourceOnStartUpCheckBox.setSelected(settings.loadSourcePathOnStartUp);
 
         //shutdown component

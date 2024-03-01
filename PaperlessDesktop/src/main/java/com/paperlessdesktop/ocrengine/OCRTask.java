@@ -51,7 +51,7 @@ public class OCRTask {
     /**
      * Destination path read from settings.
      */
-    private String dstPath = settings.destDir;
+    private String dstPath = settings.destinationDir;
     /**
      * Volatile atomic boolean to keep track if loading task is running
      */
@@ -124,7 +124,7 @@ public class OCRTask {
             progressIndicator.setOpacity(1);
         });
 
-        final File path = new File(settings.destDir + File.separator + "filters");
+        final File path = new File(settings.destinationDir + File.separator + "filters");
         if(!path.exists()){
             path.mkdirs();
         }
